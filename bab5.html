@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <style> 
+        .circle{ 
+            border-radius: 50%; 
+            width: 100px; 
+            height: 100px; 
+            background-color: rgb(86, 68, 190); 
+            font-size: 64px; 
+            text-align: center; 
+            color: white; 
+        } 
+        body{ 
+            display: flex; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <script> 
+    let arr = [];
+        let start = setInterval(function func(){ 
+             let val = document.createElement('div'); 
+             val.classList.add('circle'); 
+             let val1 = Math.ceil(Math.random() * (36) - (1) + (1)); 
+             let count = 0;
+             val.innerText = val1; 
+             document.body.append(val); 
+             if(!arr.length){
+                arr.push(val1);
+             }
+             if(arr.length){
+                for(let item of arr){
+                    if(item == val1){
+                        count++;
+                    }
+                }
+                if(count == 0){
+                    arr.push(val1);
+                }
+             }
+              if(arr.length == 36){
+                clearInterval(start);
+             }
+        },1000); 
+         
+             
+     
+           
+                
+ 
+         
+    </script> 
+</body> 
+</html>

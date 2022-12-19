@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+
+        }
+        .cont1{
+            width: 408px;
+            display: flex;
+            flex-wrap: wrap;
+           height: 100px;
+        }
+        .block1{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .block2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(246, 255, 0);
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .block3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 0, 0);
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+  
+    <script>
+         let container = document.createElement('div');
+        container.classList.add('cont');
+        document.body.append(container);
+        let container1 = document.createElement('div');
+        container1.classList.add('cont1');
+        container.append(container1); 
+        let container2 = document.createElement('div');
+        container2.classList.add('cont1');
+        container.append(container2); 
+        let container3 = document.createElement('div');
+        container3.classList.add('cont1');
+        container.append(container3); 
+        let count1 = 0;
+             let count2 = 0;
+             let count3 = 0;
+        let start = setInterval(function func(){ 
+             let val = document.createElement('div'); 
+             val.classList.add('circle'); 
+             let val1 = Math.ceil(Math.random() * (3) - (1) + (1)); 
+             
+              
+             document.body.append(val); 
+             if(val1 == 1){
+                let val2 = document.createElement('div');
+                val2.classList.add('block1');
+                container1.append(val2);
+                count1++;
+                val2.innerText = count1;
+             }
+             if(val1 == 2){
+                let val3 = document.createElement('div');
+                val3.classList.add('block2');
+                container2.append(val3);
+                count2++;
+                val3.innerText = count2;
+             }
+             if(val1 == 3){
+                let val4 = document.createElement('div');
+                val4.classList.add('block3');
+                container3.append(val4);
+                count3++;
+                val4.innerText = count3;
+             }
+             if((count1 == 200 ) || (count2 == 200) || (count3 == 200)){
+                clearInterval(start);
+             }
+            
+        },20); 
+         
+    </script>
+</body>
+</html>

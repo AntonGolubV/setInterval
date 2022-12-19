@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+</head> 
+<body> 
+    <script> 
+        let val1 = prompt('Введите текст'); 
+        let val2 = prompt('Какой создать елемент'); 
+        let val3 = prompt('Какого цвета должен быть текст'); 
+         
+        let value = document.createElement(`${val2}`); 
+        value.innerText = val1; 
+        value.style.color = val3; 
+        document.body.append(value); 
+        console.log(value); 
+ 
+ 
+    </script> 
+</body> 
+</html>
